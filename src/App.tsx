@@ -18,6 +18,7 @@ export function App() {
             <Route path="/backbone" element={<Navigate to="/backbone/home" replace />} />
             <Route path="/home" element={<Navigate to="/backbone/home" replace />} />
             <Route path="/" element={<Navigate to="/backbone/home" replace />} />
+            <Route path="*" element={<Navigate to="/backbone/home" replace />} />
           </Routes>
         </Layout>
       </Router>
