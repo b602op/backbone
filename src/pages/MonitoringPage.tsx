@@ -135,6 +135,7 @@ export const MonitoringPage = () => {
   return (
     <div className="monitoring">
       <Text size="2xl" weight="bold" style={{ margin: "0 0 20px 0" }}>Мониторинг</Text>
+      <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>тут в зависимости от частоиты разные решения можно применить</Text>
       <Table
         rows={currentRows}
         columns={columns}
