@@ -203,6 +203,7 @@ const stats3 = [
 export const HomePage = () => (
   <div className="container">
     <Text size="2xl" weight="bold" style={{ margin: "0 0 20px 0" }}>Главный страница</Text>
+    <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>тут все статусы подключения</Text>
     <Grid cols={2} gap="xl">
       <GridItem col={1}>
         <HomeCard nodes={DEMO_NODES.slice(0, 4)} stats={stats1} />
