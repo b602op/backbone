@@ -164,7 +164,7 @@ export const TaskPage = () => {
               label="Закрыть"
               onClick={() => {
                 setIsSuccessModalOpen(false)
-                navigate("/home")
+                navigate("/backbone/home")
               }}
             />
           </div>

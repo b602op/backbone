@@ -4,17 +4,17 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const items = [
   {
     label: 'главная',
-    href: '/home',
+    href: '/backbone/home',
     size: "s",
   },
   {
     label: 'список этапов',
-    href: '/stage',
+    href: '/backbone/stage',
     size: "s",
   },
   {
     label: 'мониторинг',
-    href: '/monitoring',
+    href: '/backbone/monitoring',
     size: "s",
   },
 ];

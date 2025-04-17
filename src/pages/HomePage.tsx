@@ -175,7 +175,7 @@ const HomeCard = ({ nodes, stats }: HomeCardProps) => {
       ) : null}
   
       <div style={{ display: "flex", justifyContent: "space-between"}}>
-        <Button label="Создать задачу" iconRight={IconAdd} onClick={() => navigate('/task')} />
+        <Button label="Создать задачу" iconRight={IconAdd} onClick={() => navigate('/backbone/task')} />
         <Button label={showReport ? "Скрыть" : "Отчет за день"} view="ghost" onClick={() => setShowReport(!showReport)} />
       </div>
     </Card>

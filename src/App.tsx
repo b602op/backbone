@@ -10,12 +10,14 @@ export function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/task" element={<TaskPage />} />
-            <Route path="/stage" element={<StageListPage />} />
-            <Route path="/stage/create" element={<StageCreatePage />} />
-            <Route path="/monitoring" element={<MonitoringPage />} />
-            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/backbone/home" element={<HomePage />} />
+            <Route path="/backbone/task" element={<TaskPage />} />
+            <Route path="/backbone/stage" element={<StageListPage />} />
+            <Route path="/backbone/stage/create" element={<StageCreatePage />} />
+            <Route path="/backbone/monitoring" element={<MonitoringPage />} />
+            <Route path="/backbone" element={<Navigate to="/backbone/home" replace />} />
+            <Route path="/home" element={<Navigate to="/backbone/home" replace />} />
+            <Route path="/" element={<Navigate to="/backbone/home" replace />} />
           </Routes>
         </Layout>
       </Router>
