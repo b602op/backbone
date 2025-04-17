@@ -8,6 +8,8 @@ import { Badge } from '@consta/uikit/Badge';
 import { NetworkDiagram } from '../components/NetworkDiagram';
 import { Grid, GridItem } from '@consta/uikit/Grid';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { ReportList } from '../components/ReportList';
 
 const DEMO_NODES = [
   {
@@ -150,29 +152,33 @@ type HomeCardProps = {
 }
 
 const HomeCard = ({ nodes, stats }: HomeCardProps) => {
+  const [showReport, setShowReport] = useState(false);
+
   const navigate = useNavigate();
 
   return (
-    <div>
-      <Card verticalSpace="m" horizontalSpace="m">
-        <NetworkDiagram nodes={nodes} />
-      </Card>
-  
+    <Card verticalSpace="m" horizontalSpace="m">
+      <NetworkDiagram nodes={nodes} />
+
       <div className="stats-grid">
         {stats.map((item) => (
-          <Card key={item.label} border status={item.status} style={{ margin: "10px 0" }}>
+          <Card key={item.label} border status={item.status} style={{ margin: "10px 0", padding: "5px" }}>
             <Text size="s" view="secondary">{item.label}</Text>
             <Text size="xl" weight="bold">{item.value}</Text>
-            {item.status === 'alert' && <Badge label="Требует внимания" />}
+            {item.status === 'alert' && <Badge label="Требует внимания" status="warning" />}
           </Card>
         ))}
       </div>
+
+      {showReport ? (
+        <ReportList />
+      ) : null}
   
       <div style={{ display: "flex", justifyContent: "space-between"}}>
         <Button label="Создать задачу" iconRight={IconAdd} onClick={() => navigate('/task')} />
-        <Button label="Отчет за день" view="ghost" />
+        <Button label={showReport ? "Скрыть" : "Отчет за день"} view="ghost" onClick={() => setShowReport(!showReport)} />
       </div>
-    </div>
+    </Card>
   )
 };
 

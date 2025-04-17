@@ -68,7 +68,7 @@ export const TaskPage = () => {
       <form onSubmit={handleSubmit}>
         <div style={{ display: 'grid', gap: 'var(--space-xl)', maxWidth: '800px' }}>
           <Select
-            label="Сетевой узел*"
+            label="Сетевой узел"
             items={networkNodes}
             value={networkNodes.find(node => node.id === formData.nodeId) || null}
             onChange={(currentValue) => handleChange('nodeId', currentValue?.id || '')}
@@ -79,7 +79,7 @@ export const TaskPage = () => {
           />
 
           <TextField
-            label="Название задачи*"
+            label="Название задачи"
             value={formData.title}
             onChange={(currentValue) => handleChange('title', currentValue)}
             placeholder="Например: Замена модуля SFP"
@@ -95,7 +95,7 @@ export const TaskPage = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-xl)' }}>
             <Select
-              label="Приоритет*"
+              label="Приоритет"
               items={priorityOptions}
               value={formData.priority}
               getItemKey={(item: TaskPriority) => item}

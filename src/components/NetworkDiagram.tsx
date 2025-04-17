@@ -13,7 +13,9 @@ export const NetworkDiagram = ({ nodes }: NetworkDiagramProps) => {
       {nodes.map(({ id, type, data }) => {
         return (
           <GridItem key={id} cols={1} gap="xl" style={{ display: "flex", flexFlow: "column", margin: "0 5px;" }}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
             {type === "router" ? <IconColoredCreateLogic /> : <IconAttributes />}
+            </div>
             <Text align='center'>{type}</Text>
             <Text align='center'>ip: {data.ip}</Text>
             <Text size='s' >{data.model}</Text>
