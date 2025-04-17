@@ -135,7 +135,9 @@ export const MonitoringPage = () => {
   return (
     <div className="monitoring">
       <Text size="2xl" weight="bold" style={{ margin: "0 0 20px 0" }}>Мониторинг</Text>
-      <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>тут в зависимости от частоиты разные решения можно применить</Text>
+      <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>тут в зависимости от частоты обновления разные решения можно применить</Text>
+      <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>- вебсокет, если часто</Text>
+      <Text size="s" weight="regular" style={{ margin: "0 0 20px 0" }}>- или запрос каждые 5 минут, например</Text>
       <Table
         rows={currentRows}
         columns={columns}
